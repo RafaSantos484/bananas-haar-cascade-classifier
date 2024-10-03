@@ -33,4 +33,5 @@ def run():
     preprocess_imgs('raw_negatives', 'tmp/negatives', 'JPEG')
     preprocess_imgs('raw_positives', 'tmp/positives/rawdata', 'BMP')
 
-    copy_folder_content('misc/objectmaker', 'tmp/positives')
+    copy_folder_content('misc', 'tmp')
+    copy_folder_content('misc', 'tmp/positives')

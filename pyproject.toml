@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bananas_haar_cascade_classifier"
+name = "haar_cascade_classifier"
 version = "0.1.0"
 description = ""
 authors = ["Rafael Santos <rafaelsantos32141@gmail.com>"]
@@ -11,8 +11,9 @@ python = ">=3.10"
 pillow = "^10.4.0"
 
 [tool.poetry.scripts]
-preprocess = "bananas_haar_cascade_classifier.preprocessing:run"
-negatives_to_txt = "bananas_haar_cascade_classifier.negatives_to_txt:run"
+preprocess = "haar_cascade_classifier.preprocessing:run"
+train = "haar_cascade_classifier.train:run"
+negatives_to_txt = "haar_cascade_classifier.negatives_to_txt:run"
 
 [build-system]
 requires = ["poetry-core"]
