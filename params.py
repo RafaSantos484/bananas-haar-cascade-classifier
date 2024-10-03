@@ -1,1 +1,2 @@
-img_size = 256
+img_size = 24
+num_stages = 15
