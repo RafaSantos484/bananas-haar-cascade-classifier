@@ -2,7 +2,7 @@ import os
 from typing import Literal
 from PIL import Image
 from params import img_size
-from .utils import clear_folder, copy_folder_content
+from .utils import clear_folder, copy_files_content
 
 
 def preprocess_imgs(src: str, dest: str, format: Literal['BMP', 'JPEG']):
@@ -16,7 +16,7 @@ def preprocess_imgs(src: str, dest: str, format: Literal['BMP', 'JPEG']):
             img_path = os.path.join(src, filename)
             with Image.open(img_path) as img:
                 # img = img.convert('L')
-                # img = img.resize((img_size, img_size))
+                img = img.resize((img_size, img_size))
 
                 output_path = os.path.join(
                     dest, os.path.splitext(filename)[0] + formats_extension[format])
@@ -37,5 +37,5 @@ def run():
         for filename in os.listdir('tmp/negative'):
             bg_file.write(f'{filename}\n')
 
-    copy_folder_content('misc', 'tmp')
-    copy_folder_content('misc', 'tmp/positive')
+    copy_files_content('misc', 'tmp')
+    copy_files_content('misc', 'tmp/positive')

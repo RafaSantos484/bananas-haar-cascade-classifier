@@ -9,11 +9,13 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.10"
 pillow = "^10.4.0"
+opencv-python = "^4.10.0.84"
 
 [tool.poetry.scripts]
 preprocess = "haar_cascade_classifier.preprocessing:run"
 train = "haar_cascade_classifier.train:run"
-negatives_to_txt = "haar_cascade_classifier.negatives_to_txt:run"
+generate_xml = "haar_cascade_classifier.generate_xml:run"
+test = "haar_cascade_classifier.test_classifier:run"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,6 +1,6 @@
 import os
 import subprocess
-from params import img_size, num_stages
+from params import obj_size, num_stages
 from .utils import clear_folder
 
 
@@ -14,8 +14,8 @@ def run():
         "-info", "tmp/positive/info.txt",
         "-vec", "tmp/vector/facevector.vec",
         "-num", str(num_positives),
-        "-w", str(img_size),
-        "-h", str(img_size)
+        "-w", str(obj_size),
+        "-h", str(obj_size)
     ]
     result = subprocess.run(
         command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -36,8 +36,8 @@ def run():
         "-nstages", str(num_stages),
         "-mem", "1024",
         "-mode", "ALL",
-        "-w", str(img_size),
-        "-h", str(img_size)
+        "-w", str(obj_size),
+        "-h", str(obj_size)
     ]
     result = subprocess.run(
         command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
